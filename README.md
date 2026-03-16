@@ -10,7 +10,7 @@ The website of [The Urgent Publisher](urgentpublisher.macd-falmouth.studio) is a
 
 The website is currently stored on a platform called Github. Github is a Microsoft owned platform that programmers use to store and share their code in things called repositories. Luckily for us, Github offers a service called Github Pages that allows you to add website files to a repository which can then be published as a website. (Usually this process requires a server to host the website).
 
-## During the Workshop
+## How to add to the website
 To get started with uploading your websites, we will go through some of the first steps of downloading the current code, adding your own, and uploading new code. Whilst we will do this together, I have written out the steps below if you need to refer to it in the future.
 
 1. In order to download the repository from Github, you need to make a Github account. Go to [github.com](https://github.com/) and click on "sign up" which is usually in the top right hand corner of the website. Add in your email, a password, a username and your country/region.
