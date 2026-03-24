@@ -8,11 +8,8 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: hsl(0, 4%, 26%);
-            color:beige
-           
-            
-            
-            
+            color:beige;
+            cursor: url("assets/fire-cursor.ico"), default;   
         }
         h1 {
             text-align: center;
@@ -26,18 +23,25 @@
             margin: 0 auto;
             text-align: center;
         }
+        .new-image {
+            opacity: 0;
+        }
+
+        .old-image {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <div id="gallery-container">
         <h1>Lost Cincinnati</h1>
         <p>All these images come from the Cincinnati Public Library</p>
-        <img src="images/119-broadway-1920.jpg"> <!-- each of these images is stored in a folder called images thats in the same folder as the html document. They are currently in single column, but can also be arranged differently. These images could be exchanged for videos or gifs -->
-        <img src="images/119-broadway-CD.png"> 
+        <img src="images/119-broadway-1920.jpg" class="old-image">
+        <img src="images/119-broadway-CD.png" class="new-image"> 
         <p> <small>119 broadway / Ca 1920~ <br> This was originally the home of M.P. Cassilly in the 1860s and then turned into a boarding house. It and other properties were purchased in 1922 by the Queen City Club for its new and present home. </small></p>
   
-        <img src="images/234-w-7th-1900.jpg">
-        <img src="images/234-W-7th-St-CD.png"> 
+        <img src="images/234-w-7th-1900.jpg" class="old-image">
+        <img src="images/234-W-7th-St-CD.png" class="new-image"> 
         <p> <small> 234 W. Seventh Street, Cincinnati, Ohio / Ca 1900 <br>
         This was the home of philanthropist Reuben R. Springer, who largely funded the building of Music Hall. As the caption indicates, it later was demolished to allow for the construction of the manufacturing building for the Henry Geiershofer Clothing Company in 1905. It is now the site of a parking garage. </small></p>
             </div>
