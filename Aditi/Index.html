@@ -10,7 +10,7 @@
 </head>
 <body> 
     
-    <button style="position: fixed; top: 300px; left: 188px">
+    <button style="position: fixed; top: 30%; left: 20%">
         CLICK HERE
     </button>
     <button style="position: fixed; top: 500px; left: 708px">
@@ -68,8 +68,33 @@
         CLICK HERE
     </button>
     
-    
+    <h1>Time remaining: <span id="timer"></span></h1>
 
+
+    
+    <script>
+        window.onload = function () {
+        let timeLeft = 300; // 5 minutes = 300 seconds
+        const timerElement = document.getElementById("timer");
+
+        const countdown = setInterval(function () {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            // Format with leading zeros
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            timerElement.textContent = `${minutes}:${seconds}`;
+
+            timeLeft--;
+
+            if (timeLeft < 0) {
+            clearInterval(countdown);
+            timerElement.textContent = "Time's up!";
+            }
+        }, 1000);
+        };
+    </script>
 
 
     
