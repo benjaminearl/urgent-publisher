@@ -23,12 +23,28 @@
             margin: 0 auto;
             text-align: center;
         }
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-wrapper img {
+            max-height: 400px;
+        }
+
+        /* ONLY the top image should be absolute */
         .new-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             opacity: 0;
+            z-index: 2;
+            transition: opacity 0.1s linear;
         }
 
         .old-image {
-            opacity: 1;
+            display: block;
+            z-index: 1;
         }
     </style>
 </head>
@@ -36,14 +52,42 @@
     <div id="gallery-container">
         <h1>Lost Cincinnati</h1>
         <p>All these images come from the Cincinnati Public Library</p>
-        <img src="images/119-broadway-1920.jpg" class="old-image">
-        <img src="images/119-broadway-CD.png" class="new-image"> 
+        <div class="image-wrapper">
+            <img src="images/119-broadway-1920.jpg" class="old-image">
+            <img src="images/119-broadway-CD.png" class="new-image">
+        </div>
         <p> <small>119 broadway / Ca 1920~ <br> This was originally the home of M.P. Cassilly in the 1860s and then turned into a boarding house. It and other properties were purchased in 1922 by the Queen City Club for its new and present home. </small></p>
   
-        <img src="images/234-w-7th-1900.jpg" class="old-image">
-        <img src="images/234-W-7th-St-CD.png" class="new-image"> 
+        <div class="image-wrapper">
+            <img src="images/234-w-7th-1900.jpg" class="old-image">
+            <img src="images/234-W-7th-St-CD.png" class="new-image"> 
+        </div>
         <p> <small> 234 W. Seventh Street, Cincinnati, Ohio / Ca 1900 <br>
         This was the home of philanthropist Reuben R. Springer, who largely funded the building of Music Hall. As the caption indicates, it later was demolished to allow for the construction of the manufacturing building for the Henry Geiershofer Clothing Company in 1905. It is now the site of a parking garage. </small></p>
-            </div>
+    </div>
+
+        <script>
+const wrappers = document.querySelectorAll(".image-wrapper");
+
+wrappers.forEach(wrapper => {
+    const newImg = wrapper.querySelector(".new-image");
+
+    wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const width = rect.width;
+
+        // value between 0 (left) and 1 (right)
+        const percent = x / width;
+
+        newImg.style.opacity = percent;
+    });
+
+    // Optional: reset when mouse leaves
+    wrapper.addEventListener("mouseleave", () => {
+        newImg.style.opacity = 0;
+    });
+});
+</script>
 </body>
 </html>
