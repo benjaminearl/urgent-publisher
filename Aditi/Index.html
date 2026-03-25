@@ -9,13 +9,7 @@
     </style>
 </head>
 <body> 
-    
-    <button style="position: fixed; top: 30%; left: 20%">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 500px; left: 708px">
-        CLICK HERE
-    </button>
+    <button onclick="showAlert('write your message here')" style="position: fixed; top: 500px; left: 708px">CLICK ME THERE IS A MESSAGE</button>
     <button style="position: fixed; top: 200px; left: 779px">
         CLICK HERE
     </button>
@@ -94,6 +88,10 @@
             }
         }, 1000);
         };
+
+        function showAlert(message) {
+            alert(message);
+            }
     </script>
 
 
