@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU ADD THE TITLE OF YOUR WEBSITE HERE</title>
+    <style>
+        /* YOUR STYLING GOES HERE */
+        body{
+            /* background-color: red; */
+        }
+
+        #timeline {
+            color: black;
+            border: 1px solid red;
+            padding: 40px;
+            width: 50%;
+            margin: 0px auto 100px auto;
+            text-align: justify;
+
+        }
+        .red-text {
+            color: red;
+            font-weight: bold;
+        }
+        #song-section {
+            display: flex;
+            flex-direction: row;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            width: 95%;
+            margin: 0px auto;
+        }
+
+        .song {
+            border: 1px solid red;
+        }
+
+        #lyrics-download {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        @media (max-width: 750px) {
+            #timeline {
+                width: 85%;
+                padding: 10px;
+            }
+        } 
+        
+        @media (max-width: 400px) {
+            #timeline {
+                width: 90%;
+                padding: 10px;
+            }
+        }  
+    </style>
+</head>
+<body>
+    <p id="timeline">650 BC: Messenian helots (serfs) revolt against Spartan rule 464 BC: Helot uprising following a Spartan earthquake 165 BC: Maccabean Revolt, a Jewish rebellion in Jerusalem 1381: The Peasants' Revolt in England against high taxation 1517: Martin Luther pins his 95 Theses, protesting Church practices 1773: Boston Tea Party protests British tea taxes 1789: The French Revolution begins 1819: Widespread protests in Britain for parliamentary reform and against high unemployment 1842: General Strike in Britain, involving over 500,000 workers protesting pay cuts 1888: Matchgirls' Strike in London against harsh working conditions 1905: Bloody Sunday in Russia, sparking widespread uprising 1913: The Women's Suffrage Pilgrimage in Britain 1930:Gandhi’s Salt March against British rule in India 1963: Birmingham Children's Crusade and March on Washington for Civil Rights 1969: Stonewall Riots in New York City, protesting police persecution of LGBTQ+ people 1970: First Earth Day, marking a rise in environmental activism 1975: Icelandic women’s one-day strike for equality 1990: Poll tax riots in the United Kingdom 2003: Large-scale international protests against the Iraq War 2019: Global climate strikes driven by Greta Thunberg 2025: Anti-Trump Protests (No Kings) and strikes for the removal of Authoritarian regimes 2026: ______________ ongoing 2030: _____________ 2035: ______________ 2050: _______________ 2075: _____________ <span class="red-text">BE READY. HAVE A SONG TO SING.</span></p>
+
+    <div id="song-section">
+        
+        <div class="song">
+            <h4>Blowin' in the Wind</h4>
+            <audio controls src="audio/aphex-twin.mp3"></audio>
+            <p>How many roads must a man walk down<br>
+                Before you call him a man?<br>
+                How many seas must a white dove sail<br>
+                Before she sleeps in the sand?<br>
+                Yes, and how many times must the cannonballs fly<br>
+                Before they're forever banned?<br>
+                The answer, my friend, is blowin' in the wind<br>
+            </p>
+        </div>
+
+        <div class="song">
+            <h4>Beans in my Ears</h4>
+            <audio controls src="audio/aphex-twin.mp3"></audio>
+            <p>How many roads must a man walk down<br>
+                Before you call him a man?<br>
+                How many seas must a white dove sail<br>
+                Before she sleeps in the sand?<br>
+                Yes, and how many times must the cannonballs fly<br>
+                Before they're forever banned?<br>
+                The answer, my friend, is blowin' in the wind<br>
+            </p>
+        </div>
+
+        <div class="song">
+            <h4>Turn Me Around</h4>
+            <audio controls src="audio/aphex-twin.mp3"></audio>
+            <p>How many roads must a man walk down<br>
+                Before you call him a man?<br>
+                How many seas must a white dove sail<br>
+                Before she sleeps in the sand?<br>
+                Yes, and how many times must the cannonballs fly<br>
+                Before they're forever banned?<br>
+                The answer, my friend, is blowin' in the wind<br>
+            </p>
+        </div>
+
+        <div class="song">
+            <h4>Joy in my Heart</h4>
+            <audio controls src="audio/aphex-twin.mp3"></audio>
+            <p>How many roads must a man walk down<br>
+                Before you call him a man?<br>
+                How many seas must a white dove sail<br>
+                Before she sleeps in the sand?<br>
+                Yes, and how many times must the cannonballs fly<br>
+                Before they're forever banned?<br>
+                The answer, my friend, is blowin' in the wind<br>
+            </p>
+        </div>
+
+    </div>
+
+    <div id="lyrics-download">
+        <a href="pdf/riso-print.pdf" download>Download the lyrics to these songs!</a>
+    </div>
+
+</body>
+</html>
