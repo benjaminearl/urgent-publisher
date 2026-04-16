@@ -9,28 +9,13 @@
     </style>
 </head>
 <body> 
-    
-    <button style="position: fixed; top: 30%; left: 20%">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 500px; left: 708px">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 200px; left: 779px">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 100px; left: 459px">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 60px; left: 99px">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top: 290px; left: 609px">
-        CLICK HERE
-    </button>
-    <button style="position: fixed; top:300px; left: 800px">
-        CLICK HERE
-    </button>
+    <button onclick="showAlert('This page is emotionally unavailable')" style="position: fixed; top: 500px; left: 708px">CLICK ME THERE IS A MESSAGE</button>
+    <button onclick="showAlert('This page does not exist in real life')" style="position: fixed; top: 200px; left: 779px">PICK ME, CHOOSE ME, LOVE ME</button>
+
+    <button onclick="showAlert('Haha, fooled you there')" style="position: fixed; top: 100px; left: 459px">I AM SHINY</button>
+    <button onclick="showAlert('What was the point of this at all?')" style="position: fixed; top: 60px; left: 99px">ACTUALLY, DON'T CLICK ME</button>
+    <button onclick="showAlert('This page, like its very obvious name, is catfish')" style="position: fixed; top: 290px; left: 609px">CLICK BAIT</button>
+    <button onclick="showAlert('Here to waste your time')" style="position: fixed; top: 300px; left: 800px">PLEASE CLICK ME</button>
     <button style="position: fixed; top: 600px; left: 490px">
         CLICK HERE
     </button>
@@ -94,6 +79,10 @@
             }
         }, 1000);
         };
+
+        function showAlert(message) {
+            alert(message);
+            }
     </script>
 
 
