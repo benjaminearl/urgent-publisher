@@ -61,29 +61,8 @@
       color: rgb(0, 85, 255);
       text-align: left;
       line-height: 1.1;
+      left margin: 5px;
     }
-
-    .section-1 .side-grid 
-    {
-      display: grid;
-      grid-template-columns: repeat(4, 2fr);
-      gap: 0px;
-    }
-
-    .section-1 .side-grid div {
-      min-height: 400px;
-      min-width: 200px;
-      border: 1px solid rgba(0, 85, 255, 0.3);
-      border-radius: 1px;
-      display: flex;
-      justify-content: center;
-      padding: 0px;
-      color: rgb(0, 65, 170);
-      font-size: 1rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
     section:nth-child(2) h1 {
       font-weight: medium;
       font-size: 50px;
@@ -112,7 +91,7 @@ Retrieved 2026-04-20, License - CC BY-SA 4.0
   grid-template-rows: auto auto auto;
 grid-template-areas:
   'a a a a'
-  '   b  '
+  'b b b b'
   'c c c c';
 }
 
@@ -124,7 +103,6 @@ grid-template-areas:
 .second {
   grid-area: b;
   background-color: rgb(0, 0, 0);
-  place-items: h1 center;
 }
     }
   </style>
@@ -132,10 +110,12 @@ grid-template-areas:
 <body>
   <section class="section-1">
     <div>
-      <h1>Have you observed the animals around you lately?</h1>
+      <img src="images/frog.jpg" alt="Frog">
     </div>
-    <div class="side-grid">
-      <div><img src="images/frog.jpg" alt="Frog">
+
+        <div class="first"></div>
+      <h1>
+        <div class="second"></div>Have you observed the animals around you lately?/<div class="second"></h1>
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -144,7 +124,7 @@ grid-template-areas:
             <title>The Climate Decoder</title>
             <style></style>
     </div>
-      <div><img src="images/cuckoo.jpg" alt="Cuckoo"></div>
+      <div></div>
       <div></div>
       <div></div>
     </div>
