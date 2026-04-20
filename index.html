@@ -24,6 +24,11 @@
 </body>
 
 </head>
+<<<<<<< Updated upstream
+=======
+<body>
+    <p id="timeline">href="/bernice/index.html">9<+href="/liliana/index.html">2<l2+6+12+4=33</span></p>
+>>>>>>> Stashed changes
 
 
 
@@ -31,3 +36,50 @@
 
 </style>
 </html>
+
+
+
+
+
+HTML Structure
+html
+
+<div class="tooltip-container">
+  Hover over me
+  <span class="tooltip-text">This is your pop-up box!</span>
+</div>
+
+CSS Styling
+css
+
+/* Container to hold the text and popup */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Hide the popup by default */
+.tooltip-text {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  /* Position the popup */
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the popup on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
