@@ -8,28 +8,25 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
         }
         .container {
             position: relative;
-            image-size: cover;
         }
         button {
             position: absolute;
-            width: 110px;
-            height: 110px;
-            border: 3px solid #333;
+            width: 300px;
+            height: 300px;
+            border: 5px solid #0033ff;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            background-size: cover ;
             background-color: rgba(255, 255, 255, 0.9);
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 0;
             transition: transform 0.1s;
+
             
         }
         button:hover {
@@ -44,11 +41,11 @@
     <script>
         let animals = [
             { image: 'images/Frog.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/dog-bark-1.wav', playing: false, button: null },
-            { image: 'https://via.placeholder.com/100?text=🐱', soundUrl: 'https://www.soundjay.com/misc/sounds/cat-meow-1.wav', playing: false, button: null },
-            { image: 'https://via.placeholder.com/100?text=🐭', soundUrl: 'https://www.soundjay.com/misc/sounds/mouse-squeak-1.wav', playing: false, button: null },
-            { image: 'https://via.placeholder.com/100?text=🐮', soundUrl: 'https://www.soundjay.com/misc/sounds/cow-moo-1.wav', playing: false, button: null },
-            { image: 'https://via.placeholder.com/100?text=🐷', soundUrl: 'https://www.soundjay.com/misc/sounds/pig-oink-1.wav', playing: false, button: null },
-            { image: 'https://via.placeholder.com/100?text=🐸', soundUrl: 'https://www.soundjay.com/misc/sounds/frog-croak-1.wav', playing: false, button: null }
+            { image: 'images/Cuckoo.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/cat-meow-1.wav', playing: false, button: null },
+            { image: 'images/Ants.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/mouse-squeak-1.wav', playing: false, button: null },
+            { image: 'images/Dragonflies.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/cow-moo-1.wav', playing: false, button: null },
+            { image: 'images/Bees.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/pig-oink-1.wav', playing: false, button: null },
+            { image: 'images/Swallows.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/frog-croak-1.wav', playing: false, button: null }
         ];
         let allPlaying = false;
         let crashStart = 0;
@@ -60,12 +57,12 @@
 
             // Create image buttons in a 3x2 grid
             let cols = 3;
-            let buttonWidth = 110;
-            let buttonHeight = 110;
+            let buttonWidth = 300;
+            let buttonHeight = 300;
             let startX = 50;
             let startY = 50;
-            let spacingX = 220;
-            let spacingY = 210;
+            let spacingX = 0;
+            let spacingY = 0;
 
             for (let i = 0; i < animals.length; i++) {
                 let col = i % cols;
