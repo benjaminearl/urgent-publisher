@@ -32,11 +32,6 @@
 </head>
 <body>
     <div class="equation">
-        <button title="Number 9">9</button>+
-        <button title="Number 2">2</button>+
-        <button title="Number 6">6</button>+
-        <button title="Number 6">6</button>+
-        <button title="Number 4">4</button>=27
         <button title="Number 9" href="bernice/index.html">9</button>+
         <button title="Number 2" href="liliana/index.html">2</button>+
         <button title="Number 6" href="Georgie/index.html">6</button>+
@@ -45,4 +40,59 @@
 
     </div>
 </body>
+
+</head>
+
+
+
+    
+
+</style>
 </html>
+
+
+
+
+
+HTML Structure
+html
+
+<div class="tooltip-container">
+  Hover over me
+  <span class="tooltip-text">This is your pop-up box!</span>
+</div>
+
+CSS Styling
+css
+
+/* Container to hold the text and popup */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Hide the popup by default */
+.tooltip-text {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  /* Position the popup */
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the popup on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
