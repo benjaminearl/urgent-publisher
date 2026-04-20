@@ -5,63 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handmade Essay Example</title>
     <style>
-        body {
-            background-color: lightcyan;
-        }
-        h1 {
-            font-weight: normal;
-            font-size: 30px;
-        }
-        h2 {
-            font-weight: normal;
-            font-size: 24px;
-        }
-        h3 {
-            font-weight: normal;
-            font-size: 20px;
-            text-decoration: underline;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.4;
-        }
-        img {
-            width: 100%;
-        }
-        #essay-container {
-            width: 60%;
-            margin: 0 auto;
-        }
+        
     </style>
 </head>
-<body> <!-- This is the body of the website, the body is the area of the code document where you put things for a visitor to see. Any content you write into here will be translated by the browser into a graphic form (text/shape/image etc) -->
-    <div id="essay-container">
-        
-        <h1>This is the Title of Your Essay</h1> <!--title of your essay goes here-->
-        <h2>Maybe it Also Has a Subtitle.</h2>
+<body> 
+    <button onclick="showAlert('This page is emotionally unavailable')" style="position: fixed; top: 500px; left: 708px">CLICK ME THERE IS A MESSAGE</button>
+    <button onclick="showAlert('This page does not exist in real life')" style="position: fixed; top: 200px; left: 779px">PICK ME, CHOOSE ME, LOVE ME</button>
 
-        <h3>Introduction to Your Essay</h3> <!-- text of your essay goes here -->
-        <p>So, you've written an essay and you want to find a place to publish it to the web. You've poured your heart and soul as you've worked tirlessly to write out the deepest most intense research you've ever done. Blood, sweat and tears have gone into this text, its the most important thing you've done to date. Maybe it's time to share it with the world - you could print it but then how will people across the world see this masterpiece? You could publish a book, but the publishing industry is a bit of a mess and seems more complicated than it should be. Why not add it to the web?</p>
-        <p>A link, thats all someone needs and they'll be able to read your words in the palm of their hand. There's code involved, that doesn't seem like a lot of fun, but perhaps with some tinkering and crafting you can make a digital space thats just right for your essay - a space that gives context through illustrations, photos, videos, flashing gifs, whatever you want.</p>
-        <p>You could give it a go?</p>
+    <button onclick="showAlert('Haha, fooled you there')" style="position: fixed; top: 100px; left: 459px">I AM SHINY</button>
+    <button onclick="showAlert('What was the point of this at all?')" style="position: fixed; top: 60px; left: 99px">ACTUALLY, DON'T CLICK ME</button>
+    <button onclick="showAlert('This page, like its very obvious name, is catfish')" style="position: fixed; top: 290px; left: 609px">CLICK BAIT</button>
+    <button onclick="showAlert('Here to waste your time')" style="position: fixed; top: 300px; left: 800px">PLEASE CLICK ME</button>
+    <button style="position: fixed; top: 600px; left: 490px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 400px; left: 500px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 550px; left: 320px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 420px; left: 250px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 460px; left: 1000px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 600px; left: 900px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 530px; left: 60px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 150px; left: 110px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 600px; left: 1000px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 250px; left: 900px">
+        CLICK HERE
+    </button>
+    <button style="position: fixed; top: 80px; left: 1020px">
+        CLICK HERE
+    </button>
+    <button>
+        CLICK HERE
+    </button>
+    
+    <h1>Time remaining: <span id="timer"></span></h1>
 
-        <h3>Chapter 1 of Your Essay</h3>
-        <p>When it comes to publishing a text, you might want to look at typography - how does it reflect the text? Am I using the right typeface? Is the line height and length right for the type of reading that I am asking of people?</p>
 
-        <img src="https://resonantcomputing.org/resonance-artwork.png" alt="a drawing of a square with people walking and sitting together, a building is in the background">
-        <small>image from resonant computing manifesto</small>
+    
+    <script>
+        window.onload = function () {
+        let timeLeft = 300; // 5 minutes = 300 seconds
+        const timerElement = document.getElementById("timer");
 
-        <p>You add an image, you're not sure why but feel that it compliments the statement you are making. You found it online on a website that also had an essay on it that you felt resonated with your text. You <a href="https://resonantcomputing.org/">link to it</a>. The page is coming together - you're finding new ways to express your ideas alongside the text that you hadn't initially imagined when you were writing into the word document. Interaction, links, videos, sound - all these elements compliment and support your ideas. Your network brain is working in overtime finding new connections and imagine new relations to already exisiting thoughts. You can see your text as a node in a network of thought expressed and collected on- and offline.</p>
+        const countdown = setInterval(function () {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
 
-        <h3>Chatper 2 of Your Essay</h3>
-        <p>You realise things might have gotten out of hand in the previous chapter - your original essay became more complex and you realise that it was pretty good as it was. You realise what you actually need is some more structure. Perhaps a way to add that quote in from that famous book you read a few weeks ago</p>
-        <blockquote>
-            <p>"Unless there's something specifically about you or your job that requires it, there is nothing to be admired about being constantly connected, constantly potentially production the second you open your eyes in the morning – and in my opnion, no one should accept this, not now, not ever"</p>
-        </blockquote>
-        <p>—Jenny Odell, How to do Nothing</p>
-        <p>Wow, the quote really makes that connection you were grappling with in chapter 1 clear. Maybe there are other things you can begin to structure that would also serve as a way to rein in your text - remember theres a word limit for the hand-in.</p>
-        <p>...</p>
-    </div>
+            // Format with leading zeros
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            timerElement.textContent = `${minutes}:${seconds}`;
+
+            timeLeft--;
+
+            if (timeLeft < 0) {
+            clearInterval(countdown);
+            timerElement.textContent = "Time's up!";
+            }
+        }, 1000);
+        };
+
+        function showAlert(message) {
+            alert(message);
+            }
+    </script>
 
 
     
