@@ -6,7 +6,8 @@
     <title>The Urgent Publisher</title>
     <style>
         body {
-            font-size: 25px;
+            font-size: 50px;
+            font-family:'Times New Roman', serif;
             background-color: black;
             color: rgb(255, 255, 255);
             text-align: center;
@@ -19,80 +20,32 @@
             font-size: 25px;
             text-align: center;
         }
-        .button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: inherit;
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-        }
     </style>
 </head>
-<body>
+<body> 
     <div class="equation">
-        <button class="button" title="Number 9" href="bernice/index.html">9</button>+
-        <button class="button" title="Number 2" href="liliana/index.html">2</button>+
-        <button class="button" title="Number 6" href="Georgie/index.html">6</button>+
-        <button class="button" title="Number 6" href="Aditi/Index.html">6</button>+
-        <button class="button" title="Number 4" href="Sweedal/blank-example.html">4</button>=27   
+        <button class="button" title="Number 9" href="https://urgent-publisher/bernice/index.html">9</button>+
+        <button class="button" title="Number 2" href="https://urgent-publisher/liliana/index.html">2</button>+
+        <button class="button" title="Number 6" href="https://urgent-publisher/georgie/index.html">6</button>+
+        <button class="button" title="Number 6" href="https://urgent-publisher/aditi/index.html">6</button>+
+        <button class="button" title="Number 4" href="https://urgent-publisher/sweedal/blank-example.html">4</button>=27   
 
     </div>
+    <style>
+        .button {
+            background-color: transparent;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            position: center;
+
+        }
+        .button:hover {
+            color: rgb(255, 111, 0);
+        }
+    </style>
 </body>
 
-</head>
-
-
-
-    
-
-</style>
 </html>
-
-
-
-
-
-HTML Structure
-html
-
-<div class="tooltip-container">
-  Hover over me
-  <span class="tooltip-text">This is your pop-up box!</span>
-</div>
-
-CSS Styling
-css
-
-/* Container to hold the text and popup */
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Hide the popup by default */
-.tooltip-text {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px;
-  position: absolute;
-  z-index: 1;
-  /* Position the popup */
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Show the popup on hover */
-.tooltip-container:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
