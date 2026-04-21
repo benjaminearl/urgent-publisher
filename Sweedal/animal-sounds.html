@@ -5,34 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animal Sounds Hover Game</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
+            width: 100vw;
+            height: 100vh;
             display: flex;
+            overflow: hidden;
         }
         .container {
             position: relative;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
         }
         button {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 5px solid #0033ff;
-            background-size: contain;
+            position: static;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #333;
+            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover ;
             background-color: rgba(255, 255, 255, 0.9);
+            image-rendering: pixelated;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 0;
             font-size: 0;
             transition: transform 0.1s;
-
-            
         }
         button:hover {
-            background-color: rgba(200, 200, 255, 0.9);
-            transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.3);
+            transform: scale(0.98);
+            z-index: 10;
         }
     </style>
 </head>
@@ -40,32 +53,34 @@
     <div class="container" id="container"></div>
     <script>
         let animals = [
-            { image: 'images/Frog.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/dog-bark-1.wav', playing: false, button: null },
-            { image: 'images/Cuckoo.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/cat-meow-1.wav', playing: false, button: null },
-            { image: 'images/Ants.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/mouse-squeak-1.wav', playing: false, button: null },
-            { image: 'images/Dragonflies.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/cow-moo-1.wav', playing: false, button: null },
-            { image: 'images/Bees.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/pig-oink-1.wav', playing: false, button: null },
-            { image: 'images/Swallows.jpg', soundUrl: 'https://www.soundjay.com/misc/sounds/frog-croak-1.wav', playing: false, button: null }
+            { image: 'images/Frog.jpg', soundUrl: 'images/frog croaking.mp3', playing: false, button: null },
+            { image: 'images/Cuckoo.jpg', soundUrl: 'images/cuckoo calling.mp3', playing: false, button: null },
+            { image: 'images/Ants.jpg', soundUrl: 'images/ants buzzing.mp3', playing: false, button: null },
+            { image: 'images/Dragonflies.jpg', soundUrl: 'images/dragonflies hummming.mp3', playing: false, button: null },
+            { image: 'images/Bees.jpg', soundUrl: 'images/bees buzzing.mp3', playing: false, button: null },
+            { image: 'images/Swallows.jpg', soundUrl: 'images/swallows chirping.mp3', playing: false, button: null },
+            { image: 'images/Cattle.jpg', soundUrl: 'images/cattle mooing.mp3', playing: false, button: null },
+            { image: 'images/Grasshopper.jpg', soundUrl: 'images/grasshopper chirping.mp3', playing: false, button: null },
+            { image: 'images/Peacock.jpg', soundUrl: 'images/peacock crowing.mp3', playing: false, button: null }
         ];
         let allPlaying = false;
         let crashStart = 0;
-        let canvasElement;
+        let canvasElement = null;
 
         function setup() {
-            // Create image buttons in a 3x2 grid
+            // Create image buttons in a 3x3 grid that fills the screen
             let cols = 3;
-            let buttonWidth = 300;
-            let buttonHeight = 300;
-            let startX = 50;
-            let startY = 50;
-            let spacingX = 0;
-            let spacingY = 0;
+            let rows = 3;
+            let containerWidth = window.innerWidth;
+            let containerHeight = window.innerHeight;
+            let buttonWidth = containerWidth / cols;
+            let buttonHeight = containerHeight / rows;
 
             for (let i = 0; i < animals.length; i++) {
                 let col = i % cols;
                 let row = Math.floor(i / cols);
-                let x = startX + col * spacingX;
-                let y = startY + row * spacingY;
+                let x = col * buttonWidth;
+                let y = row * buttonHeight;
 
                 let btn = createButton('');
                 btn.position(x, y);
@@ -74,7 +89,7 @@
                 
                 // Capture animal reference in closure
                 (function(animal) {
-                    btn.mouseOver(() => playAnimalSound(animal));
+                    btn.mousePressed(() => playAnimalSound(animal));
                 })(animals[i]);
                 
                 animals[i].button = btn;
@@ -83,8 +98,10 @@
 
         function playAnimalSound(animal) {
             if (!animal.playing && !allPlaying) {
+                console.log('Playing:', animal.soundUrl);
                 let audio = new Audio(animal.soundUrl);
-                audio.play();
+                audio.crossOrigin = "anonymous";
+                audio.play().catch(err => console.log('Error:', err));
                 animal.playing = true;
                 checkAllPlaying();
             }
@@ -98,7 +115,7 @@
         }
 
         function draw() {
-            background(255);
+            background(200);
 
             if (allPlaying) {
                 let elapsed = millis() - crashStart;
