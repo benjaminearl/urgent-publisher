@@ -25,14 +25,6 @@
             left: 48%;
             transform: translate(-50%, -50%);
         }
-    </style>
-</head>
-<body> 
-    <div class="equation">
-        <button class="button" title="Number 9" href="https://urgent-publisher/bernice/index.html">9</button>+<button class="button" title="Number 2" href="https://urgent-publisher/liliana/index.html">2</button>+<button class="button" title="Number 6" href="https://urgent-publisher/georgie/index.html">6</button>+<button class="button" title="Number 6" href="https://urgent-publisher/aditi/index.html">6</button>+<button class="button" title="Number 4" href="https://urgent-publisher/sweedal/blank-example.html">4</button>=<button class="button" title="Number 27" href="https://urgent-publisher/blank-example.html">27</button>   
-
-    </div>
-    <style>
         .button {
             background-color: transparent;
             border: none;
@@ -46,7 +38,75 @@
         .button:hover {
             color: rgb(255, 111, 0);
         }
+        .pop-up {
+            display: none;
+            font-size: 12px;
+            border: 1px solid white;
+            position: fixed;
+            top: 500px;
+            left: 100px;
+        }
     </style>
+</head>
+<body> 
+    <div class="equation">
+        <a class="button" id="bernice-button" href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">9</a>+<button class="button" title="Number 2" href="https://urgent-publisher/liliana/index.html">2</button>+<button class="button" title="Number 6" href="https://urgent-publisher/georgie/index.html">6</button>+<button class="button" title="Number 6" href="https://urgent-publisher/aditi/index.html">6</button>+<button class="button" title="Number 4" href="https://urgent-publisher/sweedal/blank-example.html">4</button>=<button class="button" title="Number 27" href="https://urgent-publisher/blank-example.html">27</button>
+    </div>
+    <div id="pop-ups">
+        <div id="bernice-pop-up" class="pop-up">
+            <p>Bernice</p>
+            <p>One Song Many Voices</p>
+            <p>size: 4.8mb</p>
+            <p>#protest, #music</p>
+        </div>
+        <div id="liliana-pop-up" class="pop-up">
+            <p>Liliana</p>
+            <p>Architecture Obselences</p>
+            <p>size: 2.1mb</p>
+            <p>#architecture</p>
+        </div>
+        <div id="3-pop-up" class="pop-up">
+            <p>Liliana</p>
+            <p>Architecture Obselences</p>
+            <p>size: 2.1mb</p>
+            <p>#architecture</p>
+        </div>
+        <div id="4-pop-up" class="pop-up">
+            <p>Liliana</p>
+            <p>Architecture Obselences</p>
+            <p>size: 2.1mb</p>
+            <p>#architecture</p>
+        </div>
+        <div id="5-pop-up" class="pop-up">
+            <p>Liliana</p>
+            <p>Architecture Obselences</p>
+            <p>size: 2.1mb</p>
+            <p>#architecture</p>
+        </div>
+        <div id="6-pop-up" class="pop-up">
+            <p>Liliana</p>
+            <p>Architecture Obselences</p>
+            <p>size: 2.1mb</p>
+            <p>#architecture</p>
+        </div>
+    </div>
+    <script>
+        const button = document.getElementsByClassName("button")
+        const popUps = document.getElementsByClassName("pop-up")
+
+        for (let i = 0; i < button.length; i++) {
+            button[i].addEventListener("mouseover", (event) => {
+                const popUp = popUps[i]
+                console.log(popUp)
+                popUp.style.display = "inline-block" 
+            })
+            button[i].addEventListener("mouseout", (event) => {
+                const popUp = popUps[i]
+                console.log(popUp)
+                popUp.style.display = "none" 
+            }) 
+        }  
+    </script>
 </body>
 
 </html>
