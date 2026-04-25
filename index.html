@@ -101,7 +101,7 @@
                 popUp.style.display = "inline-block" 
                 popUp.style.left = event.pageX + "px"
                 popUp.style.top = event.pageY + "px"
-                popUp.style.below = "0px"   
+                popUp.style.below = event.pageY + "px"   
             })
             button[i].addEventListener("mouseout", (event) => {
                 const popUp = popUps[i]
