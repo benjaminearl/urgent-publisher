@@ -4,100 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Urgent Publisher</title>
-    <style>
-        body {
-            font-size: 85px;
-            font-family: 'Geneva;', serif;
-            background-color: black;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            max-width: 800px;
-            line-height: 1.4;
-            position: relative;
-        }
-        .dropdown{
-            position: relative;
-            display: inline-block;
-        }
-        .equation {
-            color: white;
-            background-color: black;
-            font-size: 85px;
-            text-align: center;
-            position: fixed;
-            top: 50%;
-            left: 48%;
-            transform: translate(-50%, -50%);
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: relative;
-            background-color: #ff4400;
-            min-width: 20px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 12px 16px;
-            color: white;
-            font-size: 20px;
-            text-align: center;
-            position: fixed;
-            top: 50%;
-            left: 48%;
-            transform: translate(-50%, -50%);
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            text-color: white;
+<style>
+body {
+  font-family: Geneva, sans-serif;
+  font-size: 60px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 43%;
+  transform: translate(-40%, -50%);
+}
 
-        }
-    </style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.dropdown:hover {
+  background-color: #ff5e00;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #dc4200;
+  font-size: 20px;
+  word-spacing: -5px;
+  width: 200px;
+  height: 300px;
+  padding: 10px 0;
+  border-radius: 2px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
 </head>
-<body> 
-    <div class="equation">
-        <div class="dropdown-content" id="bernice-button" href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">9</div>+<div class="dropdown-content" id="liliana-button" href="https://urgent-publisher.macd-falmouth.studio/liliana/index.html">2</div>+<div class="dropdown-content" id="georgie-button" href="https://urgent-publisher.macd-falmouth.studio/georgie/index.html">6</div>+<div class="dropdown-content" id="aditi-button" href="https://urgent-publisher.macd-falmouth.studio/aditi/index.html">6</div>+<div class="dropdown-content" id="sweedal-button" href="https://urgent-publisher.macd-falmouth.studio/sweedal/animal-sounds.html">4</div>=<div class="dropdown-content" id="number-27-button" href="https://urgent-publisher.macd-falmouth.studio/index.html">27</div>
-    </div>
+<body>
+<div style="position: relative;">
+  <div class="dropdown">
+    9
     <div class="dropdown-content">
-        <div id="bernice-button">
-            <p>Bernice</p>
+      <a href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">
+        <p>Bernice</p>
             <p>One Song Many Voices</p>
             <p>size: 4.8mb</p>
-            <p>#protest, #music</p>
-        </div>
-        <div id="liliana-button">
-            <p>Liliana</p>
+            <p>#protest, #music</p></a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    2
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/liliana/index.html">
+        <p>Liliana</p>
             <p>Architecture Obselences</p>
             <p>size: 2.1mb</p>
             <p>#architecture</p>
-        </div>
-        <div id="georgie-button">
-            <p>Georgie</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    6
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/georgie/index.html">
+        <p>Georgie</p>
             <p>The Feminist Vandal</p>
             <p>size: 2.1mb</p>
             <p>#feminism</p>
-        </div>
-        <div id="aditi-button">
-            <p>Aditi</p>
-            <p>Architecture Obselences</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    6
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/aditi/index.html">
+        <p>Aditi</p>
+            <p>The Exhausted Romantic</p>
             <p>size: 2.1mb</p>
-            <p>#architecture</p>
-        </div>
-        <div id="sweedal-button">
-            <p>Sweedal</p>
+            <p>#Dating #Relationships</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    4
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/sweedal/animal-sounds.html">
+        <p>Sweedal</p>
             <p>The Climate Decoder</p>
             <p>size: 2.1mb</p>
             <p>#climatestudies</p>
-        </div>
-        <div id="number-27-button">
-            <p>MACD</p>
-            <p>Architecture Obselences</p>
+      </a>
+    </div>
+  </div>
+  =
+  <div class="dropdown">
+    27
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/index.html">
+        <p>MACD</p>
+            <p>The Urgent Publisher</p>
             <p>size: 2.1mb</p>
             <p>#urgenies</p>
-        </div>
+      </a>
     </div>
-
+  </div>
+</div>
 </body>
+</html></body>
 
 </html>
