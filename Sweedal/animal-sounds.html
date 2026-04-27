@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Sounds Hover Game</title>
+    <title>The Climate Crash</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
     <style>
         * {
@@ -52,22 +52,25 @@
     <div class="container" id="container"></div>
     <script>
         let animals = [
-            { image: 'images/Frog.jpg', soundUrl: 'images/frog croaking.mp3', playing: false, button: null, color: 'red' },
-            { image: 'images/Cuckoo.jpg', soundUrl: 'images/cuckoo calling.mp3', playing: false, button: null, color: 'blue' },
-            { image: 'images/Ants.jpg', soundUrl: 'images/ants buzzing.mp3', playing: false, button: null, color: 'green' },
-            { image: 'images/Dragonflies.jpg', soundUrl: 'images/dragonflies hummming.mp3', playing: false, button: null, color: 'red' },
-            { image: 'images/Bees.jpg', soundUrl: 'images/bees buzzing.mp3', playing: false, button: null, color: 'blue'},
-            { image: 'images/Swallows.jpg', soundUrl: 'images/swallows chirping.mp3', playing: false, button: null, color: 'green' },
-            { image: 'images/Cattle.jpg', soundUrl: 'images/cattle mooing.mp3', playing: false, button: null, color: 'red' },
-            { image: 'images/Grasshopper.jpg', soundUrl: 'images/grasshopper chirping.mp3', playing: false, button: null, color: 'blue' },
-            { image: 'images/Peacock.jpg', soundUrl: 'images/peacock crowing.mp3', playing: false, button: null, color: 'green' }
+            { image: 'images/Frog.jpg', soundUrl: 'images/frog.mp3', playing: false, button: null, audio: null},
+            { image: 'images/Cuckoo.jpg', soundUrl: 'images/cuckoo calling.mp3', playing: false, button: null, audio: null},
+            { image: 'images/Ants.jpg', soundUrl: 'images/ants.mp3', playing: false, button: null, audio: null},
+            { image: 'images/Dragonflies.jpg', soundUrl: 'images/dragonfly.mp3', playing: false, button: null, audio: null},
+            { image: 'images/Bees.jpg', soundUrl: 'images/bees-buzzing.mp3', playing: false, button: null, audio: null},
+            { image: 'images/Swallows.jpg', soundUrl: 'images/swallow.mp3', playing: false, button: null, audio: null },
+            { image: 'images/Cattle.jpg', soundUrl: 'images/herd-of-cows.mp3', playing: false, button: null, audio: null },
+            { image: 'images/Grasshopper.jpg', soundUrl: 'images/grasshopper.mp3', playing: false, button: null, audio: null },
+            { image: 'images/Peacock.jpg', soundUrl: 'images/male-peacock.mp3', playing: false, button: null, audio: null},
         ];
         let allPlaying = false;
         let crashStart = 0;
         let canvasElement = null;
+        let wasCrashed = false;
+        let gridDelayTime = 5000;  // Grid stays for 5 seconds with audio
+        let totalCrashDuration = 10000;  // Total crash duration (5s grid + 5s animation)
 
         function setup() {
-            // Create canvas behind everything
+            // Create canvas behind everything and show only when crashed
             let cnv = createCanvas(window.innerWidth, window.innerHeight);
             cnv.position(0, 0);
             cnv.style('position', 'fixed');
@@ -95,9 +98,10 @@
                 btn.style('background-image', 'url(' + animals[i].image + ')');
                 
                 // Capture animal reference in closure
-                (function(animal) {
-                    btn.mousePressed(() => playAnimalSound(animal));
-                })(animals[i]);
+                (function(animal, button) {
+                    // Use mouseenter event for hover detection
+                    button.elt.addEventListener('mouseenter', () => playAnimalSound(animal));
+                })(animals[i], btn);
                 
                 animals[i].button = btn;
             }
@@ -109,7 +113,9 @@
                 let audio = new Audio(animal.soundUrl);
                 audio.play().catch(err => console.log('Error:', err));
                 animal.playing = true;
+                animal.audio = audio;
                 checkAllPlaying();
+                audio.loop = true;  // Loop the sound
             }
         }
 
@@ -117,39 +123,82 @@
             allPlaying = animals.every(a => a.playing);
             if (allPlaying) {
                 crashStart = millis();
+                // Keep audio playing for 5 seconds, will stop when crash animation starts
             }
         }
 
         function draw(){
             if (allPlaying) {
-                let elapsedTime = millis() - crashStart;  // How long since crash started
+                let elapsedTime = millis() - crashStart;
                 
-                // PHASE 1: First 1000ms - show colored buttons (remove image, show color)
-                if (elapsedTime < 1000) {
+                // PHASE 1: Grid stays and audio plays for 5 seconds
+                if (elapsedTime < gridDelayTime) {
+                    // Show all buttons normally with audio playing
                     for (let animal of animals) {
                         if (animal.button) {
-                            animal.button.style('background-image', 'none');  // Hide image
-                            animal.button.style('background-color', animal.color);  // Show color
+                            animal.button.style('background-image', 'url(' + animal.image + ')');
+                            animal.button.show();
                         }
                     }
-                }
-                
-                // PHASE 2: After 1000ms - go black and hide buttons
-                if (elapsedTime >= 1000) {
-                    background(0);  // Black background
+                } 
+                // PHASE 2: Crash animation starts (stop audio, colored grid)
+                else if (elapsedTime < totalCrashDuration) {
+                    // Stop all audio only once when crash animation begins
+                    let timeSinceGridEnd = elapsedTime - gridDelayTime;
+                    if (timeSinceGridEnd < 50) {  // Only stop once at the beginning of this phase
+                        for (let animal of animals) {
+                            if (animal.audio) {
+                                animal.audio.pause();
+                                animal.audio.currentTime = 0;
+                            }
+                        }
+                    }
+                    
+                    // Show colored crash grid animation
+                    let colors = [
+                        [255, 0, 0],    // Red
+                        [0, 255, 0],    // Green
+                        [255, 165, 0],  // Orange
+                        [0, 0, 255]     // Blue
+                    ];
+                    let colorIndex = Math.floor(millis() / 200) % colors.length;
+                    background(...colors[colorIndex]);
                     fill(255);
                     textSize(80);
                     textAlign(CENTER, CENTER);
-                    text('SYSTEM CRASH', width/2, height/2);
+                    text('CLIMATE SYSTEM:ERROR', width/2, height/2,);
                     
+                    // Hide all buttons during crash
                     for (let animal of animals) {
                         if (animal.button) {
                             animal.button.hide();
                         }
                     }
                 }
+                
+                // PHASE 3: Auto-reset and hide crash with canvas
+                if (elapsedTime > totalCrashDuration) {
+                    // Clear canvas and hide everything
+                    background(255);
+                    
+                    // Reset all animals
+                    for (let animal of animals) {
+                        if (animal.audio) {
+                            animal.audio.pause();
+                            animal.audio.currentTime = 0;
+                        }
+                        animal.playing = false;
+                        animal.audio = null;
+                        if (animal.button) {
+                            animal.button.hide();
+                        }
+                    }
+                    allPlaying = false;
+                    crashStart = 0;
+                }
             } else {
-                // Show all buttons when not crashed (restore images)
+                // Show all buttons when not in crash state
+                background(255);
                 for (let animal of animals) {
                     if (animal.button) {
                         animal.button.style('background-image', 'url(' + animal.image + ')');
@@ -158,50 +207,24 @@
                 }
             }
         }
-                // Show all buttons when not crashed
-                for (let animal of animals) {
-                    if (animal.button) {
-                        animal.button.show();
-                    }
-                }
-        function draw(){
-            if (allPlaying) {
-                // STEP 1: Change all button colors first
-                for (let animal of animals) {
-                    if (animal.button) {
-                        animal.button.style('background-color', animal.color);
-                        animal.button.hide();
-                    }
-                }
-                
-                // STEP 2: Show black background and crash text
-                background(0);
-                fill(255);
-                textSize(80);
-                textAlign(CENTER, CENTER);
-                text('SYSTEM CRASH', width/2, height/2);
-            } else {
-                // Show all buttons when not crashed
-                for (let animal of animals) {
-                    if (animal.button) {
-                        animal.button.show();
-                    }
-                }
+function mousePressed() {
+    if (allPlaying) {
+        let elapsedTime = millis() - crashStart;
+        
+        // Check if we're in Phase 2 (crash animation)
+        if (elapsedTime >= gridDelayTime && elapsedTime < totalCrashDuration) {
+            // Check if click is near the text area (roughly center of screen)
+            if (mouseX > width/2 - 300 && mouseX < width/2 + 300 &&
+                mouseY > height/2 - 50 && mouseY < height/2 + 50) {
+                // Navigate to your page
+                window.location.href = 'blank-example.html'; 
+                return false;
             }
         }
-
-        function mousePressed() {
-            // Only reset if we're crashed and 2 second has passed
-            if (allPlaying && millis() - crashStart > 1000) {
-                // Reset all animals
-                for (let animal of animals) {
-                    animal.playing = false;
-                }
-                allPlaying = false;
-                crashStart = 0;
-                return false;  // Prevent default behavior
-            }
-        }
+    }
+}
+        console.log( 'Setup complete. Click on the animal images to play their sounds. When all are playing, the system will crash!' );
     </script>
+    
 </body>
 </html>
