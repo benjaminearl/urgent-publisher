@@ -15,6 +15,10 @@
             line-height: 1.4;
             position: relative;
         }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
         .equation {
             color: white;
             background-color: black;
@@ -25,84 +29,68 @@
             left: 48%;
             transform: translate(-50%, -50%);
         }
-        .button {
-            background-color: transparent;
-            border: none;
-            color: rgb(255, 255, 255);
-            font-size: 100px;
-            font-family: 'Geneva;', serif;
-            cursor: pointer;
-            position: center;
-
-        }
-        .button:hover {
-            color: rgb(255, 111, 0);
-        }
-        .pop-up {
-            display: none;
-            font-size: 12px;
-            border: 1px solid rgba(255, 81, 0, 0.913);
-            color: rgb(193, 58, 0);
-            background-color: rgb(193, 58, 0);
-            padding: 10px;
-            position: fixed;
-            top: 600px;
-            left: 200px;
-            text-color: rgb(0, 0, 0);
-        }
         .dropdown {
             position: relative;
             display: inline-block;
         }
         .dropdown-content {
             display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 130px;
+            position: relative;
+            background-color: #ff4400;
+            min-width: 20px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             padding: 12px 16px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 48%;
+            transform: translate(-50%, -50%);
         }
         .dropdown:hover .dropdown-content {
             display: block;
+            text-color: white;
+
         }
     </style>
 </head>
 <body> 
     <div class="equation">
-        <a class="button" id="bernice-button" href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">9</a>+<a class="button" title="liliana-button" href="https://urgent-publisher.macd-falmouth.studio/liliana/index.html">2</a>+<a class="button" title="georgie-button" href="https://urgent-publisher.macd-falmouth.studio/georgie/index.html">6</a>+<a class="button" title="aditi-button" href="https://urgent-publisher.macd-falmouth.studio/aditi/index.html">6</a>+<a class="button" title="sweedal-button" href="https://urgent-publisher.macd-falmouth.studio/sweedal/animal-sounds.html">4</a>=<a class="button" title="Number 27" href="https://urgent-publisher.macd-falmouth.studio/index.html">27</a>
+        <div class="dropdown-content" id="bernice-button" href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">9</div>+<div class="dropdown-content" id="liliana-button" href="https://urgent-publisher.macd-falmouth.studio/liliana/index.html">2</div>+<div class="dropdown-content" id="georgie-button" href="https://urgent-publisher.macd-falmouth.studio/georgie/index.html">6</div>+<div class="dropdown-content" id="aditi-button" href="https://urgent-publisher.macd-falmouth.studio/aditi/index.html">6</div>+<div class="dropdown-content" id="sweedal-button" href="https://urgent-publisher.macd-falmouth.studio/sweedal/animal-sounds.html">4</div>=<div class="dropdown-content" id="number-27-button" href="https://urgent-publisher.macd-falmouth.studio/index.html">27</div>
     </div>
     <div class="dropdown-content">
-        <div id="bernice-pop-up" class="button">
+        <div id="bernice-button">
             <p>Bernice</p>
             <p>One Song Many Voices</p>
             <p>size: 4.8mb</p>
             <p>#protest, #music</p>
         </div>
-        <div id="liliana-pop-up" class="button">
+        <div id="liliana-button">
             <p>Liliana</p>
             <p>Architecture Obselences</p>
             <p>size: 2.1mb</p>
             <p>#architecture</p>
         </div>
-        <div id="georgie-pop-up" class="button">
+        <div id="georgie-button">
             <p>Georgie</p>
             <p>The Feminist Vandal</p>
             <p>size: 2.1mb</p>
             <p>#feminism</p>
         </div>
-        <div id="aditi-pop-up" class="button">
+        <div id="aditi-button">
             <p>Aditi</p>
             <p>Architecture Obselences</p>
             <p>size: 2.1mb</p>
             <p>#architecture</p>
         </div>
-        <div id="sweedal-pop-up" class="button">
+        <div id="sweedal-button">
             <p>Sweedal</p>
             <p>The Climate Decoder</p>
             <p>size: 2.1mb</p>
             <p>#climatestudies</p>
         </div>
-        <div id="Group-pop-up" class="button">
+        <div id="number-27-button">
             <p>MACD</p>
             <p>Architecture Obselences</p>
             <p>size: 2.1mb</p>
