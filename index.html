@@ -4,95 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Urgent Publisher</title>
-    <style>
-        body {
-            font-size: 25px;
-            background-color: black;
-            color: rgb(255, 255, 255);
-            text-align: center;
-            max-width: 800px;
-            line-height: 1.4;
-        }
-        .equation {
-            color: white;
-            background-color: black;
-            font-size: 25px;
-            text-align: center;
-        }
-        .equation button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: inherit;
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="equation">
-        <button title="Number 9" href="bernice/index.html">9</button>+
-        <button title="Number 2" href="liliana/index.html">2</button>+
-        <button title="Number 6" href="Georgie/index.html">6</button>+
-        <button title="Number 6" href="Aditi/Index.html">6</button>+
-        <button title="Number 4" href="Sweedal/blank-example.html">4</button>=27   
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Urgent Publisher</title>
+<style>
+body {
+  font-family: Geneva, sans-serif;
+  font-size: 30px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  position: fixed; ;
+  top: 2.5%;
+}
 
-    </div>
-</body>
-
-</head>
-
-
-
-    
-
-</style>
-</html>
-
-
-
-
-
-HTML Structure
-html
-
-<div class="tooltip-container">
-  Hover over me
-  <span class="tooltip-text">This is your pop-up box!</span>
-</div>
-
-CSS Styling
-css
-
-/* Container to hold the text and popup */
-.tooltip-container {
+.dropdown {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 2px;
 }
 
-/* Hide the popup by default */
-.tooltip-text {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px;
+.dropdown:hover {
+  background-color: #e30000;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
+  background-color: #ff0000;
+  font-size: 15px;
+  word-spacing: 2px;
+  width: 600px;
+  height: 800px;
+  padding: 5px 0;
+  border-radius: 2px;
   z-index: 1;
-  /* Position the popup */
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  top: 100%;
+  left: 0;
 }
 
-/* Show the popup on hover */
-.tooltip-container:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
+.dropdown-content a {
+  color: #ffffff;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  line-height: 24px;
 }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.main-text {
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+</style>
+</head>
+<body>
+<div style="position: relative;">
+  <div class="dropdown">
+    0.020MB
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/bernice/index.html">
+        <h3>One Song, Many Voices</h3>
+            <p>Size:15489 Bytes</p>
+            <p>#protest, #music</p>
+            <br></br>
+            <p>Bernice Hembree</p>
+          </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    0.012MB 
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/liliana/index.html">
+        <h3>Architecture Obselences</h3>
+            <p>Size: 9341 Bytes</p>
+            <p>#architecture</p>
+            <br></br>
+            <p>Liliana Dillingham</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    0.016MB
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/Georgie/index.html">
+        <h3>The Feminist Vandal</h3>
+            <p>Size: 9913 Bytes</p>
+            <p>#feminism</p>
+            <br></br>
+            <p>Georgie Morton</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    0.016MB
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/Aditi/Index.html">
+        <h3>The Exhausted Romantic</h3>
+            <p>Size: 11282 Bytes</p>
+            <p>#Dating #Relationships</p>
+            <br></br>
+            <p>Aditi Biswas</p>
+      </a>
+    </div>
+  </div>
+  +
+  <div class="dropdown">
+    0.016MB
+    <div class="dropdown-content">
+      <a href="https://urgent-publisher.macd-falmouth.studio/Sweedal/index.html">
+      <h3>The Climate Decoder</h3>
+            <p>Size: 11445 Bytes</p>
+            <p>#climatestudies</p>
+            <br></br>
+            <p>Sweedal Dsouza</p>
+      </a>
+    </div>
+  </div>
+  =
+  <div class="dropdown">
+    0.080MB
+    <div class="dropdown-content a">
+      <a href="https://urgent-publisher.macd-falmouth.studio/index.html">
+      <h3>The Urgent Publisher</h3>
+        <p>We live in a time of polycrisis: multiple urgencies, interconnected, all requiring attention. Added to this we are consuming more and we are consuming bigger.<br>This certainty informs both the conceptual and logistical framework for this website.</br></p>
+        <p>Website weight — the total size of all the files (images, code, video) necessary for a website to load — is an invisible mass with a direct and significant impact on the climate crisis. The size of a typical webpage has increased dramatically over the last decade, from 810KB to 2.28MB. In addition the average website produces as much as 1.76g of CO2 per page view.<p> 
+        </p> Withthis in mind, each collaborator has considered a critical balance between information and a light-load webpage in communicating their specific urgency. Whilst our messages may be heavy, our website is light.</p>
+      <br></br>
+        <p><i> Communication Design 2025-26</i><br>
+        <i>Falmouth University</p></i></p></a>
+    </div>
+  </div>
+</div>
+</body>
+</html></body>
+
+</html>
