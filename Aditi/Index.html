@@ -81,7 +81,7 @@
     <script>
         
       window.onload = function () {
-    let timeLeft = 180; 
+    let timeLeft = 60; 
     const timerElement = document.getElementById("timer");
 
     let threeMinAlertShown = false;
@@ -97,8 +97,8 @@
         timerElement.textContent = `${minutes}:${seconds}`;
 
         
-        if (timeLeft <= 60 && !threeMinAlertShown) {
-            alert("alert: 1 minutes remaining!");
+        if (timeLeft <= 30 && !threeMinAlertShown) {
+            alert("alert: 30 seconds remaining!");
             threeMinAlertShown = true;
         }
 
@@ -114,7 +114,7 @@
        
         if (timeLeft < 0) {
             alert("cycle complete — restarting timer");
-            timeLeft = 180;
+            timeLeft = 60;
             threeMinAlertShown = false;
             oneMinAlertShown = false;
         }
